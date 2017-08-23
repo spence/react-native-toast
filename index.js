@@ -61,6 +61,12 @@ const showToast = function (message, duration, position) {
       );
 };
 
+Toast.showWithOptions = function (options) {
+  options.duration = (options.duration === undefined ? 'long' : options.duration);
+  options.message = options.message;
+  showWithOptions(options);
+};
+
 Toast.showShortTop = function (message) {
     showToast(message, 'short', 'top');
 };

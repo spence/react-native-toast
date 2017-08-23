@@ -7,6 +7,7 @@
 - (void)makeToast:(NSString *)message;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)duration position:(id)position addPixelsY:(int)addPixelsY;
+- (void)makeToast:(NSString *)message duration:(NSTimeInterval)duration position:(id)position addPixelsY:(int)addPixelsY styling:(NSDictionary*)styling;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position image:(UIImage *)image;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position title:(NSString *)title;
 - (void)makeToast:(NSString *)message duration:(NSTimeInterval)interval position:(id)position title:(NSString *)title image:(UIImage *)image;

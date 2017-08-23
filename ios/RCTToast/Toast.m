@@ -17,6 +17,7 @@ RCT_EXPORT_METHOD(show:(NSDictionary *)options) {
     NSString *duration = [options objectForKey:@"duration"];
     NSString *position = [options objectForKey:@"position"];
     NSNumber *addPixelsY = [options objectForKey:@"addPixelsY"];
+    NSDictionary *styling = [options objectForKey:@"styling"];
     
     if (![position isEqual: @"top"] && ![position isEqual: @"center"] && ![position isEqual: @"bottom"]) {
         RCTLogError(@"invalid position. valid options are 'top', 'center' and 'bottom'");
@@ -34,7 +35,7 @@ RCT_EXPORT_METHOD(show:(NSDictionary *)options) {
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[[[UIApplication sharedApplication]windows]firstObject] makeToast:message duration:durationInt position:position addPixelsY:addPixelsY == nil ? 0 : [addPixelsY intValue]];
+        [[[[UIApplication sharedApplication]windows]firstObject] makeToast:message duration:durationInt position:position addPixelsY:addPixelsY == nil ? 0 : [addPixelsY intValue] styling:styling];
     });
 }
 
